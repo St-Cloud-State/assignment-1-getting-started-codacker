@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application System</title>
+</head>
+<body>
+    <h1>Loan Application System</h1>
+
+    <!-- Apply for a Loan -->
+    <div id="addApplication">
+        <h2>Apply for a Loan</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name"><br><br>
+
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" id="zipcode" placeholder="Enter your zip code"><br><br>
+
+        <button onclick="submitApplication()">Submit Application</button>
+        <p id="applicationResponse"></p>
+    </div>
+
+    <hr>
+
+    <!-- Check Application Status -->
+    <div id="checkStatus">
+        <h2>Check Application Status</h2>
+        <label for="appIdCheck">Application ID:</label>
+        <input type="text" id="appIdCheck" placeholder="Enter application ID"><br><br>
+
+        <button onclick="checkStatus()">Check Status</button>
+        <p id="statusResult"></p>
+    </div>
+
+    <hr>
+
+    <!-- Update Application Status -->
+    <div id="updateStatus">
+        <h2>Update Application Status</h2>
+        <label for="appIdUpdate">Application ID:</label>
+        <input type="text" id="appIdUpdate" placeholder="Enter application ID"><br><br>
+
+        <label for="newStatus">New Status:</label>
+        <select id="newStatus">
+            <option value="received">Received</option>
+            <option value="processing">Processing</option>
+            <option value="accepted">Accepted</option>
+            <option value="rejected">Rejected</option>
+        </select><br><br>
+
+        <button onclick="updateStatus()">Update Status</button>
+        <p id="updateResponse"></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
